@@ -8,32 +8,38 @@
 <body>
     <h1>PSYCHIC GAME</h1>
 </br>
-    <p>Wins:</p>
+    <div>Wins:</div>
+    <p id="wins"></p>
 </br>
-    <p>Losses:</p>
+    <div>Losses:</div>
+    <p id="losses"></p>
 </br>
-    <p>Guesses Left:</p>
+    <div>Guesses Left:</div>
+    <p id="guessesleft"></p>
 </br>
-    <p>Your Gueses So Far:</p>
+    <div>Your Gueses So Far:</div>
+    <p id="guessessofar"></p>
 
     <script type="text/javascript">
     var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    var ranLetter = Math.floor(Math.random()*options.length);
+    var ranNum = Math.floor(Math.random()*options.length);
+    var cpuPick = (options[ranNum]);
     var userGuess = [];
+    var userGuessTag = document.querySelector("#guessessofar");
 
-    // function letterGuess(){
-    //     userGuess.push(event.key);
-    // }
-    // document.onkeypress(letterGuess("p"[3]));
+    function letterGuess(){
+        userGuess.push(event.key);
+        console.log(event.key);
+        console.log(userGuess);
+        userGuessTag.innerHTML = userGuess; 
+    }
+    document.onkeypress= letterGuess;
 
-    // var i = 0;
-    
 
-    // document.querySelector("p"[3]).innerText = i;
 
     // function updateI(){
-    //     if (i == 20){
-    //         i=0;
+    //     if (i == 0){
+    //         i=20;
     //         document.querySelector('p'[]).innerText = i;    
     //     }else {
     //         i = i + 1;
