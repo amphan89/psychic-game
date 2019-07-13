@@ -11,13 +11,16 @@
     <div>Wins:</div>
     <p id="wins"></p>
 </br>
+</br>
     <div>Losses:</div>
     <p id="losses"></p>
+</br>
 </br>
     <div>Guesses Left:</div>
     <p id="guessesleft"></p>
 </br>
-    <div>Your Gueses So Far:</div>
+</br>
+    <div>Your Guesses So Far:</div>
     <p id="guessessofar"></p>
 
     <script type="text/javascript">
@@ -26,6 +29,9 @@
     var cpuPick = (options[ranNum]);
     var userGuess = [];
     var userGuessTag = document.querySelector("#guessessofar");
+    var guessLeftTag = document.querySelector("#guessesleft");
+    var winsTag = document.querySelector("#wins")
+    var lossesTag = document.querySelector("#losses");
 
     function letterGuess(){
         userGuess.push(event.key);
@@ -35,7 +41,37 @@
     }
     document.onkeypress= letterGuess;
 
+    // function guessLeft(){
+    //     for(var i=20, i>0; i= i--){
+    //         // event.key 
+    //         guessLeftTag.innerHTML = i 
+    //     }
+    // }
+    // document.onkeyup = guessLeft;
 
+    var winsCounter = 0;
+    var lossesCounter = 0;
+    function winsCounting(){
+        if (cpuPick.includes(event.key)){
+            winsCounter++;
+            winsTag.innerHTML = winsCounter
+        }else{lossesCounter++; lossesTag.innerHTML = lossesCounter}
+    }
+    document.onkeyup = winsCounting; 
+
+
+
+
+
+    // function writeCounter(){
+	// 		if (cpuPick.includes(event.key)){
+	// 			counter++;
+	// 			console.log(writeCounter)
+
+				//when you use document.write it overrides the entire html page and gets rid of all the javascript and css
+				// document.write(counter);
+		// 	}
+		// }
 
     // function updateI(){
     //     if (i == 0){
