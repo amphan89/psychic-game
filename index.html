@@ -39,7 +39,7 @@
         console.log(userGuess);
         userGuessTag.innerHTML = userGuess; 
     }
-    document.onkeypress= letterGuess;
+    document.onkeypress = letterGuess;
 
     // function guessLeft(){
     //     for(var i=20, i>0; i= i--){
@@ -50,38 +50,18 @@
     // document.onkeyup = guessLeft;
 
     var winsCounter = 0;
-    var lossesCounter = 0;
+    var lossesCounter = -1;
     function winsCounting(){
         if (cpuPick.includes(event.key)){
             winsCounter++;
             winsTag.innerHTML = winsCounter
-        }else{lossesCounter++; lossesTag.innerHTML = lossesCounter}
+        }else{
+            lossesCounter++;
+            lossesTag.innerHTML = lossesCounter
+        }
     }
     document.onkeyup = winsCounting; 
 
-
-
-
-
-    // function writeCounter(){
-	// 		if (cpuPick.includes(event.key)){
-	// 			counter++;
-	// 			console.log(writeCounter)
-
-				//when you use document.write it overrides the entire html page and gets rid of all the javascript and css
-				// document.write(counter);
-		// 	}
-		// }
-
-    // function updateI(){
-    //     if (i == 0){
-    //         i=20;
-    //         document.querySelector('p'[]).innerText = i;    
-    //     }else {
-    //         i = i + 1;
-    //         document.querySelector('p'[]).innerText = i;  
-    //         }
-    //     }
     </script>
 </body>
 </html>
