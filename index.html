@@ -41,20 +41,25 @@
     }
     document.onkeypress = letterGuess;
 
-    // function guessLeft(){
-    //     for(var i=20, i>0; i= i--){
-    //         // event.key 
-    //         guessLeftTag.innerHTML = i 
+    // need to create a countdown for the guesses left
+    // var guessleft = 20;
+    // function guessLeftCounter(){
+    //     if (options.length.includes(event.key)){
+    //     guessleft--;
+    //     guessLeftTag.innerHTML = guessleft
     //     }
     // }
-    // document.onkeyup = guessLeft;
+    // document.onkeyup = guessLeftCounter;
 
     var winsCounter = 0;
-    var lossesCounter = -1;
+    winsTag.innerHTML = winsCounter;
+    var lossesCounter = 0;
+    lossesTag.innerHTML = lossesCounter;
     function winsCounting(){
         if (cpuPick.includes(event.key)){
             winsCounter++;
             winsTag.innerHTML = winsCounter
+            // need to reset cpuPick
         }else{
             lossesCounter++;
             lossesTag.innerHTML = lossesCounter
